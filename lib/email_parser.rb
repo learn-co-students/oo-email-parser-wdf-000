@@ -5,14 +5,14 @@
 require 'pry'
 
 class EmailParser
-
+  attr_accessor :emails_s
   @@emails = []
 
   def initialize(emails)
-    @@emails = emails.split(/(,\s)|(\s)/).reject! { |email| !email.include?(".com")}
+    @emails_s = emails
   end
 
   def parse
-    @@emails.uniq
+    @@emails = @emails_s.split(/(,\s)|(\s)/).reject! { |email| !email.include?(".com")}.uniq
   end
 end
