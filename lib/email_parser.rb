@@ -10,6 +10,6 @@ class EmailParser
   end
 
   def parse
-    @emails.split(/,? /).flatten.uniq # assume: @email contains only strings
+    @emails.split(/[, ]/).flatten.uniq # assume: @email contains only strings
   end
 end
