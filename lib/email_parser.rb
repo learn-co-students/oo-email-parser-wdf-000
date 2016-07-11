@@ -10,7 +10,7 @@ class EmailParser
      @str = str
    end
 
-   attr_accessor :str
+  #  attr_accessor :str
 
    def parse
     str =  @str.split(/\, |\s/).uniq
